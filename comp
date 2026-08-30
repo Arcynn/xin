@@ -1,0 +1,941 @@
+
+Setting environment for using XAMPP for Windows.
+Kages@DESKTOP-Q4L3BOS c:\xamp
+# mysql -root -p
+Enter password:
+ERROR 1045 (28000): Access denied for user 'Kages'@'localhost' (using password: NO)
+
+Kages@DESKTOP-Q4L3BOS c:\xamp
+# mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 9
+Server version: 10.4.32-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> create database school management system;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'management system' at line 1
+MariaDB [(none)]> create database schoolmangement;
+Query OK, 1 row affected (0.002 sec)
+
+MariaDB [(none)]> show database;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'database' at line 1
+MariaDB [(none)]> showsdatabase;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'showsdatabase' at line 1
+MariaDB [(none)]> shows database;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'shows database' at line 1
+MariaDB [(none)]> show dtadbases;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'dtadbases' at line 1
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| schoolmangement    |
+| test               |
++--------------------+
+6 rows in set (0.002 sec)
+
+MariaDB [(none)]> create table schoolmanagement();
+ERROR 1046 (3D000): No database selected
+MariaDB [(none)]> create table schoolmanagement(
+    -> ;
+ERROR 1046 (3D000): No database selected
+MariaDB [(none)]> select database schoolmangement;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'schoolmangement' at line 1
+MariaDB [(none)]> select schoolmangement;
+ERROR 1054 (42S22): Unknown column 'schoolmangement' in 'field list'
+MariaDB [(none)]> use schoolmangement;
+Database changed
+MariaDB [schoolmangement]> create table student(
+    -> studentid  int primarykey auto_increment,
+    -> first_name varchar(15) not null,
+    -> last_name varchar(15) not null,
+    -> email varchar(50) not null,
+    -> birth_date date not null,
+    -> phone_number varchar(10));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'auto_increment,
+first_name varchar(15) not null,
+last_name varchar(15) not nu...' at line 2
+MariaDB [schoolmangement]> create table student(
+    -> studentid  int primarykey auto_increment,
+    -> first_name varchar(20) not null,
+    -> last_name varchar(25) not null,
+    ->
+    ->
+    ->
+    ->
+    ->
+    ->
+    ->
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'auto_increment,
+first_name varchar(15) not null,
+last_name varchar(15) not null,' at line 2
+MariaDB [schoolmangement]> create table student(
+    -> studentid  int primarykey auto_increment,
+    -> first_name varchar(15) notnull,
+    -> last_name varchar(15) notnull,
+    -> email varchar(50) notnull,
+    -> birth_date date notnull,
+    -> phone_number varchar(10));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'auto_increment,
+first_name varchar(15) notnull,
+last_name varchar(15) notnull...' at line 2
+MariaDB [schoolmangement]> create table student(
+    -> studentid  int  auto_increment primary key,
+    -> first_name varchar(15) notnull,
+    -> last_name varchar(15) notnull,
+    -> email varchar(50) notnull,
+    -> birth_date date notnull,
+    -> phone_number varchar(10));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '
+last_name varchar(15) notnull,
+email varchar(50) notnull,
+birth_date date n...' at line 3
+MariaDB [schoolmangement]> create table student(
+    -> studentid  int  auto_increment primarykey,
+    -> first_name varchar(15) notnull,
+    -> last_name varchar(15) notnull,
+    -> email varchar(50) not null,
+    -> birth_date date not null,
+    -> phone_number varchar(10));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '
+first_name varchar(15) notnull,
+last_name varchar(15) notnull,
+email varchar...' at line 2
+MariaDB [schoolmangement]> create table student(
+    -> studentid  int auto_increment primary key,
+    -> first_name varchar(15) not null,
+    -> last_name varchar(15) not null,
+    -> birth_date date not null,
+    -> email varchar(50) not null,
+    -> phone_number varchar(10));
+Query OK, 0 rows affected (0.008 sec)
+
+MariaDB [schoolmangement]> show tables;
++---------------------------+
+| Tables_in_schoolmangement |
++---------------------------+
+| student                   |
++---------------------------+
+1 row in set (0.004 sec)
+
+MariaDB [schoolmangement]> des student;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'des student' at line 1
+MariaDB [schoolmangement]> desc student;
++--------------+--------------+------+-----+---------+----------------+
+| Field        | Type         | Null | Key | Default | Extra          |
++--------------+--------------+------+-----+---------+----------------+
+| studentid    | int(11)      | NO   | PRI | NULL    | auto_increment |
+| first_name   | varchar(15)  | NO   |     | NULL    |                |
+| last_name    | varchar(15)  | NO   |     | NULL    |                |
+| birth_date   | date         | NO   |     | NULL    |                |
+| email        | varchar(50) | NO   |     | NULL    |                |
+| phone_number | varchar(10)  | YES  |     | NULL    |                |
++--------------+--------------+------+-----+---------+----------------+
+6 rows in set (0.007 sec)
+
+MariaDB [schoolmangement]> create table teacher(
+    -> teacher_id int auto_increment primary key,
+    -> first_name varchar(20) not null,
+    -> last_name varchar(20) not null,
+    -> birth_date date not null,
+    -> email varchar(50),
+    -> phone_number varchar(10
+    -> ),
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 9
+MariaDB [schoolmangement]> create table teacher(
+    -> teacher_id int auto_increment primary key,
+    -> first_name varchar(20) not null,
+    -> last_name varchar(20) not null,
+    -> birth_date date not null,
+    -> email varchar(50),
+    -> phone_number varchar(10));
+Query OK, 0 rows affected (0.014 sec)
+
+MariaDB [schoolmangement]> show tables;
++---------------------------+
+| Tables_in_schoolmangement |
++---------------------------+
+| student                   |
+| teacher                   |
++---------------------------+
+2 rows in set (0.001 sec)
+
+MariaDB [schoolmangement]> create table course (
+    -> course_id int auto_increment primary key,
+    -> course_name varchar(120) not null,
+    -> credit decimal(4,2) not null check credit>10,
+    -> forign key (teacher_id) reference teacher(teacher_id));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'credit>10,
+forign key (teacher_id) reference teacher(teacher_id))' at line 4
+MariaDB [schoolmangement]> create table course (
+    -> course_id int auto_increment primary key,
+    -> course_name varchar(120) not null,
+    -> forign key (teacher_id) reference teacher(teacher_id),
+    -> credit decimal(4,2) check (credit > 10));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'key (teacher_id) reference teacher(teacher_id),
+credit decimal(4,2) check (cr...' at line 4
+MariaDB [schoolmangement]> create table course (
+    -> course_id int auto_increment primary key,
+    -> course_name varchar(120) not null,
+    -> foreign key (teacher_id) reference teacher(teacher_id),
+    -> credit decimal(4,2) check (credit > 10));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'reference teacher(teacher_id),
+credit decimal(4,2) check (credit > 10))' at line 4
+MariaDB [schoolmangement]> create table course (
+    -> course_id int auto_increment primary key,
+    -> course_name varchar(120) not null,
+    -> foreign key (teacher_id) references teacher(teacher_id),
+    -> credit decimal(4,2) check (credit > 10));
+ERROR 1072 (42000): Key column 'teacher_id' doesn't exist in table
+MariaDB [schoolmangement]> desc teacher;
++--------------+--------------+------+-----+---------+----------------+
+| Field        | Type         | Null | Key | Default | Extra          |
++--------------+--------------+------+-----+---------+----------------+
+| teacher_id   | int(11)      | NO   | PRI | NULL    | auto_increment |
+| first_name   | varchar(20)  | NO   |     | NULL    |                |
+| last_name    | varchar(20)  | NO   |     | NULL    |                |
+| birth_date   | date         | NO   |     | NULL    |                |
+| email        | varchar(50) | YES  |     | NULL    |                |
+| phone_number | varchar(10)  | YES  |     | NULL    |                |
++--------------+--------------+------+-----+---------+----------------+
+6 rows in set (0.007 sec)
+
+MariaDB [schoolmangement]> create table course (
+    -> course_id int auto_increment primary key,
+    -> course_name varchar(120) not null,
+    -> credit decimal(4,2) check (credit > 10),
+    -> foreign key(teacher_id) references teacher(teacher_id));
+ERROR 1072 (42000): Key column 'teacher_id' doesn't exist in table
+MariaDB [schoolmangement]> create table course (
+    -> course_id int auto_increment primary key,
+    -> course_name varchar(120) not null,
+    -> teacher_id,
+    -> credit decimal(4,2) check (credit > 10),
+    -> foreign key (teacher_id) references teacher(teacher_id));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '
+credit decimal(4,2) check (credit > 10),
+foreign key (teacher_id) references...' at line 4
+MariaDB [schoolmangement]> create table course (
+    -> course_id int auto_increment primary key,
+    -> course_name varchar(120) not null,
+    -> teacher_id int,
+    -> credit decimal(4,2) check (credit > 10),
+    -> foreign key (teacher_id) references teacher(teacher_id));
+Query OK, 0 rows affected (0.011 sec)
+
+MariaDB [schoolmangement]> create table enrollments (
+    -> enrolliment_id int auto_increment primary key,
+    -> student_id int ,
+    -> cource_id int ,
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 4
+MariaDB [schoolmangement]> create table enrollments (
+    -> enrolliment_id int auto_increment primary key,
+    -> student_id int ,
+    -> course_id int ,
+    -> enrollment_date date not null defualt "current_date",
+    -> grade char(3),
+    -> foreign key(student_id) references student(student_id),
+    -> foreign key(course_id) references course(course_id));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '"current_date",
+grade char(3),
+foreign key(student_id) references student(stu...' at line 5
+MariaDB [schoolmangement]> create table enrollments (
+    -> enrolliment_id int auto_increment primary key,
+    -> studentid int ,
+    -> course_id int ,
+    -> enrollment_date date not null defualt "current_date",
+    -> grade char(3),
+    -> foreign key(studentid) references student(studentid),
+    -> foreign key(course_id) references course(course_id));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '"current_date",
+grade char(3),
+foreign key(studentid) references student(stud...' at line 5
+MariaDB [schoolmangement]> create table enrollments (
+    -> enrolliment_id int auto_increment primary key,
+    -> student_id int ,
+    -> course_id int ,
+    -> enrollment_date date not null defualt (current_date),
+    -> grade char(3),
+    -> foreign key(studentid) references student(studentid),
+    -> foreign key(course_id) references course(course_id));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(current_date),
+grade char(3),
+foreign key(studentid) references student(stud...' at line 5
+MariaDB [schoolmangement]> create table enrollments (
+    -> enrolliment_id int auto_increment primary key,
+    -> student_id int ,
+    -> course_id int ,
+    -> enrollment_date date not null defualt (current_date),
+    -> grade char(3),
+    -> foreign key(studentid) references student(studentid),
+    -> foreign key(course_id) references course(course_id));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(current_date),
+grade char(3),
+foreign key(studentid) references student(stud...' at line 5
+MariaDB [schoolmangement]> create table enrollments (
+    -> enrolliment_id int auto_increment primary key,
+    -> student_id int ,
+    -> course_id int ,
+    -> enrollment_date date not null defualt 'current_date',
+    -> grade char(3),
+    -> foreign key(studentid) references student(studentid),
+    -> foreign key(course_id) references course(course_id));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''current_date',
+grade char(3),
+foreign key(studentid) references student(stud...' at line 5
+MariaDB [schoolmangement]> create table enrollments (
+    -> enrolliment_id int auto_increment primary key,
+    -> student_id int ,
+    -> enrollment_date date not null defualt current_date,
+    -> grade char(3),
+    -> foreign key(studentid) references student(studentid),
+    -> foreign key(course_id) references course(course_id));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'current_date,
+grade char(3),
+foreign key(studentid) references student(studen...' at line 4
+MariaDB [schoolmangement]> create table enrollments (
+    -> enrolliment_id int auto_increment primary key,
+    -> studentid int ,
+    -> course_id int ,
+    -> enrollment_date date not null defualt current_date,
+    -> grade char(3),
+    -> foreign key(studentid) references student(studentid),
+    -> foreign key(course_id) references course(course_id));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'current_date,
+grade char(3),
+foreign key(studentid) references student(studen...' at line 5
+MariaDB [schoolmangement]> create table enrollments (
+    -> enrolliment_id int auto_increment primary key,
+    -> studentid int ,
+    -> course_id int ,
+    -> enrollment_date date not null default current_date,
+    -> grade char(3),
+    -> foreign key(studentid) references student(studentid),
+    -> foreign key(course_id) references course(course_id));
+Query OK, 0 rows affected (0.011 sec)
+
+MariaDB [schoolmangement]> show tables;
++---------------------------+
+| Tables_in_schoolmangement |
++---------------------------+
+| course                    |
+| enrollments               |
+| student                   |
+| teacher                   |
++---------------------------+
+4 rows in set (0.001 sec)
+
+MariaDB [schoolmangement]> insert into student
+    -> values
+    -> (1,Shreya,Karki,2010-03-13,shreyaaa@gmail.com,********),
+    -> (2,Manisha,Magar,2009-09-02,manuuuuu@gmail.com,********),
+    -> (3,riya,Dahal,2009-11-11,riiiyaaaaaa@gmail.com,********);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '@gmail.com,********),
+(2,Naina,Magar,2009-07-04,magarnaina@gmail.com,********...' at line 3
+MariaDB [schoolmangement]> insert into student
+    -> values
+    -> (1,'Shreya','Karki',2010-03-13,'shreyaaa@gmail.com',********),
+    -> (2,'Manisha','Magar',2009-09-02,'manuuuu@gmail.com',********),
+    -> (3,'riya,Dahal',2009-11-11,'riiiyaaaaa@gmail.com',********);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '********),
+(2,'Naina','Magar',2009-07-04,'magarnaina@gmail.com',********),
+(3...' at line 3
+MariaDB [schoolmangement]> insert into student
+    -> values
+    -> (1,'Shreya','Karki','2010-03-11','shreyaaa@gmail.com','********'),
+    -> (2,'Manisha','Magar','2009-09-02','manuuuu@gmail.com','********'),
+    -> (3,'riya','Dahal','2009-11-11','riiiyaaaaa@gmail.com','********');
+ERROR 1136 (21S01): Column count doesn't match value count at row 3
+MariaDB [schoolmangement]> insert into student
+    -> insert into student
+    -> insert into student;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'insert into student
+insert into student' at line 2
+MariaDB [schoolmangement]> insert into student;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+MariaDB [schoolmangement]> insert into student
+    -> values
+    -> (1,'Shreya','Karki','2010-03-11','shreyaaa@gmail.com','********'),
+    -> (2,'Manisha','Magar','2009-09-02','manuuuu@gmail.com','********'),
+    -> (3,'riya','Dahal','2009-11-11','jiiiyaaaaa@gmail.com','********');
+Query OK, 3 rows affected (0.002 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+MariaDB [schoolmangement]>
+MariaDB [schoolmangement]>
+MariaDB [schoolmangement]> desc student;
++--------------+--------------+------+-----+---------+----------------+
+| Field        | Type         | Null | Key | Default | Extra          |
++--------------+--------------+------+-----+---------+----------------+
+| studentid    | int(11)      | NO   | PRI | NULL    | auto_increment |
+| first_name   | varchar(15)  | NO   |     | NULL    |                |
+| last_name    | varchar(15)  | NO   |     | NULL    |                |
+| birth_date   | date         | NO   |     | NULL    |                |
+| email        | varchar(50) | NO   |     | NULL    |                |
+| phone_number | varchar(10)  | YES  |     | NULL    |                |
++--------------+--------------+------+-----+---------+----------------+
+6 rows in set (0.007 sec)
+
+MariaDB [schoolmangement]> display student;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'display student' at line 1
+MariaDB [schoolmangement]> displays student;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'displays student' at line 1
+MariaDB [schoolmangement]> display table student;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'display table student' at line 1
+MariaDB [schoolmangement]> select*from student;
++-----------+------------+------------+------------+----------------------------+--------------+
+| studentid | first_name | last_name  | birth_date | email                      | phone_number |
++-----------+------------+------------+------------+----------------------------+--------------+
+|         1 | Shreya     | Karki      | 2010-03-13 | shreyaaa@gmail.com         | ********     |
+|         2 | manisha    | Magar      | 2009-09-02 | manuuuu@gmail.com          | ********     |
+|         3 | riya       | Dahal      | 2009-11-11 | riiiyaaaaa@gmail.com       | ********     |
++-----------+------------+------------+------------+----------------------------+--------------+
+3 rows in set (0.000 sec)
+
+MariaDB [schoolmangement]> desc teacher;
++--------------+--------------+------+-----+---------+----------------+
+| Field        | Type         | Null | Key | Default | Extra          |
++--------------+--------------+------+-----+---------+----------------+
+| teacher_id   | int(11)      | NO   | PRI | NULL    | auto_increment |
+| first_name   | varchar(15)  | NO   |     | NULL    |                |
+| last_name    | varchar(15)  | NO   |     | NULL    |                |
+| birth_date   | date         | NO   |     | NULL    |                |
+| email        | varchar(50)  | YES  |     | NULL    |                |
+| phone_number | varchar(10)  | YES  |     | NULL    |                |
++--------------+--------------+------+-----+---------+----------------+
+6 rows in set (0.006 sec)
+
+MariaDB [schoolmangement]> insert into teacher
+    -> values
+    -> (1,'Dipika','Khatri','2000','deepikaa@gmail.com','*********'),
+    -> (2,'Unisha','bedi','2002','unishaa8@gmail.com','**********'),
+    -> (3,'Shilpa','K.C','1001','shillugmail.com','**********');
+Query OK, 3 rows affected, 3 warnings (0.002 sec)
+Records: 3  Duplicates: 0  Warnings: 3
+
+MariaDB [schoolmangement]> desc course;
++-------------+--------------+------+-----+---------+----------------+
+| Field       | Type         | Null | Key | Default | Extra          |
++-------------+--------------+------+-----+---------+----------------+
+| course_id   | int(11)      | NO   | PRI | NULL    | auto_increment |
+| course_name | varchar(120) | NO   |     | NULL    |                |
+| teacher_id  | int(11)      | YES  | MUL | NULL    |                |
+| credit      | decimal(4,2) | YES  |     | NULL    |                |
++-------------+--------------+------+-----+---------+----------------+
+4 rows in set (0.007 sec)
+
+MariaDB [schoolmangement]> insert into course
+    -> values
+    -> (1,'mathematic','1600.00'),
+    -> (2,'computer','2505.00'),
+    -> (3,'nepali','9000.00'
+    -> );
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+MariaDB [schoolmangement]> insert into course
+    -> values
+    -> ('mathematic',1,'1600.00'),
+    -> ('computer',2,'2505.00'),
+    -> ('nepali',3,'9000.00'
+    -> );
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+MariaDB [schoolmangement]> insert into course(course_name,teacher_id,credit)
+    -> values
+    -> ('mathematic',1,'1600.00'),
+    -> ('computer',2,'2505.00'),
+    -> ('nepali',3,'9000.00'
+    -> );
+Query OK, 3 rows affected, 3 warnings (0.002 sec)
+Records: 3  Duplicates: 0  Warnings: 3
+
+MariaDB [schoolmangement]> select*from course;
++-----------+-------------+------------+--------+
+| course_id | course_name | teacher_id | credit |
++-----------+-------------+------------+--------+
+|         1 | mathematic  |          1 |  99.99 |
+|         2 | computer    |          2 |  99.99 |
+|         3 | nepali      |          3 |  99.99 |
++-----------+-------------+------------+--------+
+3 rows in set (0.000 sec)
+
+MariaDB [schoolmangement]> desc course;
++-------------+--------------+------+-----+---------+----------------+
+| Field       | Type         | Null | Key | Default | Extra          |
++-------------+--------------+------+-----+---------+----------------+
+| course_id   | int(11)      | NO   | PRI | NULL    | auto_increment |
+| course_name | varchar(120) | NO   |     | NULL    |                |
+| teacher_id  | int(11)      | YES  | MUL | NULL    |                |
+| credit      | decimal(4,2) | YES  |     | NULL    |                |
++-------------+--------------+------+-----+---------+----------------+
+4 rows in set (0.006 sec)
+
+MariaDB [schoolmangement]> truncate table course;
+ERROR 1701 (42000): Cannot truncate a table referenced in a foreign key constraint (`schoolmangement`.`enrollments`, CONSTRAINT `enrollments_ibfk_2` FOREIGN KEY (`course_id`) REFERENCES `schoolmangement`.`course` (`course_id`))
+MariaDB [schoolmangement]> desc course;
++-------------+--------------+------+-----+---------+----------------+
+| Field       | Type         | Null | Key | Default | Extra          |
++-------------+--------------+------+-----+---------+----------------+
+| course_id   | int(11)      | NO   | PRI | NULL    | auto_increment |
+| course_name | varchar(120) | NO   |     | NULL    |                |
+| teacher_id  | int(11)      | YES  | MUL | NULL    |                |
+| credit      | decimal(4,2) | YES  |     | NULL    |                |
++-------------+--------------+------+-----+---------+----------------+
+4 rows in set (0.007 sec)
+
+MariaDB [schoolmangement]> alter table course modifycredit decimal(8,2);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'decimal(8,2)' at line 1
+MariaDB [schoolmangement]> alter table course modify credit decimal(8,2);
+Query OK, 3 rows affected (0.041 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+MariaDB [schoolmangement]> select*from course;
++-----------+-------------+------------+--------+
+| course_id | course_name | teacher_id | credit |
++-----------+-------------+------------+--------+
+|         1 | mathematic  |          1 |  99.99 |
+|         2 | computer    |          2 |  99.99 |
+|         3 | nepali      |          3 |  99.99 |
++-----------+-------------+------------+--------+
+3 rows in set (0.001 sec)
+
+MariaDB [schoolmangement]> desc course;
++-------------+--------------+------+-----+---------+----------------+
+| Field       | Type         | Null | Key | Default | Extra          |
++-------------+--------------+------+-----+---------+----------------+
+| course_id   | int(11)      | NO   | PRI | NULL    | auto_increment |
+| course_name | varchar(120) | NO   |     | NULL    |                |
+| teacher_id  | int(11)      | YES  | MUL | NULL    |                |
+| credit      | decimal(8,2) | YES  |     | NULL    |                |
++-------------+--------------+------+-----+---------+----------------+
+4 rows in set (0.007 sec)
+
+MariaDB [schoolmangement]> update course
+    -> set credit=1555
+    -> credit=2550
+    -> credit =;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'credit=2550
+credit =' at line 3
+MariaDB [schoolmangement]> update course
+    -> set credit=1555 where course_name='mathematic';
+Query OK, 1 row affected (0.002 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [schoolmangement]> update course
+    -> set credit=1555 where course_name='nepali';
+Query OK, 1 row affected (0.002 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [schoolmangement]> update course
+    -> set credit=1555 where course_name='social';
+Query OK, 1 row affected (0.002 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [schoolmangement]> select*from course;
++-----------+-------------+------------+---------+
+| course_id | course_name | teacher_id | credit  |
++-----------+-------------+------------+---------+
+|         1 | mathematic  |          1 | 1555.00 |
+|         2 | computer    |          2 | 1555.00 |
+|         3 | nepali      |          3 | 1555.00 |
++-----------+-------------+------------+---------+
+3 rows in set (0.000 sec)
+
+MariaDB [schoolmangement]> update course
+    -> set credit=1555 where course_name='mathematic';
+Query OK, 0 rows affected (0.000 sec)
+Rows matched: 1  Changed: 0  Warnings: 0
+
+MariaDB [schoolmangement]> update course
+    -> set credit=2255 where course_name='nepali';
+Query OK, 1 row affected (0.002 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [schoolmangement]> update course
+    -> set credit=3555 where course_name='social';
+Query OK, 1 row affected (0.002 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [schoolmangement]> select*from course;
++-----------+-------------+------------+---------+
+| course_id | course_name | teacher_id | credit  |
++-----------+-------------+------------+---------+
+|         1 | mathematic  |          1 | 1555.00 |
+|         2 | computer    |          2 | 2255.00 |
+|         3 | nepali      |          3 | 3555.00 |
++-----------+-------------+------------+---------+
+3 rows in set (0.000 sec)
+
+MariaDB [schoolmangement]> select*from course
+    -> order by credit;
++-----------+-------------+------------+---------+
+| course_id | course_name | teacher_id | credit  |
++-----------+-------------+------------+---------+
+|         1 | mathematic  |          1 | 1555.00 |
+|         2 | computer    |          2 | 2255.00 |
+|         3 | nepali      |          3 | 3555.00 |
++-----------+-------------+------------+---------+
+3 rows in set (0.000 sec)
+
+MariaDB [schoolmangement]> select*from course
+    -> order by credit desc;
++-----------+-------------+------------+---------+
+| course_id | course_name | teacher_id | credit  |
++-----------+-------------+------------+---------+
+|         3 | nepali      |          3 | 3555.00 |
+|         2 | computer    |          2 | 2255.00 |
+|         1 | mathematic  |          1 | 1555.00 |
++-----------+-------------+------------+---------+
+3 rows in set (0.000 sec)
+
+MariaDB [schoolmangement]> select*from course
+    -> where credit;
++-----------+-------------+------------+---------+
+| course_id | course_name | teacher_id | credit  |
++-----------+-------------+------------+---------+
+|         1 | mathematic  |          1 | 1555.00 |
+|         2 | computer    |          2 | 2255.00 |
+|         3 | nepali      |          3 | 3555.00 |
++-----------+-------------+------------+---------+
+3 rows in set (0.000 sec)
+
+MariaDB [schoolmangement]> select*from course
+    -> where credit;
++-----------+-------------+------------+---------+
+| course_id | course_name | teacher_id | credit  |
++-----------+-------------+------------+---------+
+|         1 | mathematic  |          1 | 1555.00 |
+|         2 | computer    |          2 | 2255.00 |
+|         3 | nepali      |          3 | 3555.00 |
++-----------+-------------+------------+---------+
+3 rows in set (0.000 sec)
+
+MariaDB [schoolmangement]> select*from course
+    -> where credit
+    -> limit 1;
++-----------+-------------+------------+---------+
+| course_id | course_name | teacher_id | credit  |
++-----------+-------------+------------+---------+
+|         1 | mathematic  |          1 | 1555.00 |
++-----------+-------------+------------+---------+
+1 row in set (0.000 sec)
+
+MariaDB [schoolmangement]> select*from course
+    -> where credit>2000
+    -> limit 1;
++-----------+-------------+------------+---------+
+| course_id | course_name | teacher_id | credit  |
++-----------+-------------+------------+---------+
+|         2 | computer    |          2 | 2255.00 |
++-----------+-------------+------------+---------+
+1 row in set (0.000 sec)
+
+MariaDB [schoolmangement]> select*from course
+    -> where credit>2000
+    -> limit 2;
++-----------+-------------+------------+---------+
+| course_id | course_name | teacher_id | credit  |
++-----------+-------------+------------+---------+
+|         2 | computer    |          2 | 2255.00 |
+|         3 | nepali      |          3 | 3555.00 |
++-----------+-------------+------------+---------+
+2 rows in set (0.000 sec)
+
+MariaDB [schoolmangement]> select max(credit)
+    -> from crouse;
+ERROR 1146 (42S02): Table 'schoolmangement.crouse' doesn't exist
+MariaDB [schoolmangement]> select max(credit)
+    -> from course;
++-------------+
+| max(credit) |
++-------------+
+|     3555.00 |
++-------------+
+1 row in set (0.000 sec)
+
+MariaDB [schoolmangement]> desc enrollment;
+ERROR 1146 (42S02): Table 'schoolmangement.enrollment' doesn't exist
+MariaDB [schoolmangement]> show tables;
++---------------------------+
+| Tables_in_schoolmangement |
++---------------------------+
+| course                    |
+| enrollments               |
+| student                   |
+| teacher                   |
++---------------------------+
+4 rows in set (0.001 sec)
+
+MariaDB [schoolmangement]> desc enrollments;
++-----------------+---------+------+-----+-----------+----------------+
+| Field           | Type    | Null | Key | Default   | Extra          |
++-----------------+---------+------+-----+-----------+----------------+
+| enrolliment_id  | int(11) | NO   | PRI | NULL      | auto_increment |
+| studentid       | int(11) | NO   | MUL | NULL      |                |
+| course_id       | int(11) | YES  | MUL | NULL      |                |
+| enrollment_date | date    | NO   |     | curdate() |                |
+| grade           | char(3) | YES  |     | NULL      |                |
++-----------------+---------+------+-----+-----------+----------------+
+5 rows in set (0.007 sec)
+
+MariaDB [schoolmangement]> insert into erolliments(student_id,course_id,enroolment_date,grade)
+    -> values
+    -> (1,1,'2026-07-16','A')
+    -> ,
+    -> (2,2,'2026-07-16','B'),
+    -> (3,3,'2026-07-16','A');
+ERROR 1146 (42S02): Table 'schoolmangement.erolliments' doesn't exist
+MariaDB [schoolmangement]> insert into erollments(student_id,course_id,enroolment_date,grade)
+    -> values
+    -> (1,1,'2026-07-16','A')
+    -> ,
+    -> (2,2,'2026-07-16','B'),
+    -> (3,3,'2026-07-16','A');
+ERROR 1146 (42S02): Table 'schoolmangement.erollments' doesn't exist
+MariaDB [schoolmangement]> insert into enrollments(student_id,course_id,enroolment_date,grade)
+    -> values
+    -> (1,1,'2026-07-16','A'),
+    -> (2,2,'2026-07-16','B'),
+    -> (3,3,'2026-07-16','A');
+ERROR 1054 (42S22): Unknown column 'student_id' in 'field list'
+MariaDB [schoolmangement]> insert into erollments(studentid,course_id,enroolment_date,grade)
+    -> values
+    -> (1,1,'2026-07-16','A'),
+    -> (2,2,'2026-07-16','B'),
+    -> (3,3,'2026-07-16','A');
+ERROR 1146 (42S02): Table 'schoolmangement.erollments' doesn't exist
+MariaDB [schoolmangement]> insert into enrollments(studentid,course_id,enroolment_date,grade)
+    -> values
+    -> (1,1,'2026-07-16','A'),
+    -> (1,1,'2026-07-16','A'),
+    -> (1,1,'2026-07-16','A'),;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 5
+MariaDB [schoolmangement]> insert into enrollments(studentid,course_id,enroolment_date,grade)
+    -> values
+    -> (1,1,'2026-07-16','A'),
+    -> (2,2,'2026-07-16','B'),
+    -> (3,3,'2026-07-16','A');
+ERROR 1054 (42S22): Unknown column 'enroolment_date' in 'field list'
+MariaDB [schoolmangement]> insert into erollments(studentid,course_id,enrollment_date,grade)
+    -> values
+    -> (1,1,'2026-07-16','A'),
+    -> (2,2,'2026-07-16','B'),
+    -> (3,3,'2026-07-16','A');
+ERROR 1146 (42S02): Table 'schoolmangement.erollments' doesn't exist
+MariaDB [schoolmangement]> insert into enrollments(studentid,course_id,enrollment_date,grade)
+    -> values
+    -> (1,1,'2026-07-16','A'),
+    -> (2,2,'2026-07-16','B'),
+    -> (3,3,'2026-07-16','A');
+Query OK, 3 rows affected (0.003 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+MariaDB [schoolmangement]>
+MariaDB [schoolmangement]>
+MariaDB [schoolmangement]>
+MariaDB [schoolmangement]>
+MariaDB [schoolmangement]> select*from enrollment;
+ERROR 1146 (42S02): Table 'schoolmangement.enrollment' doesn't exist
+MariaDB [schoolmangement]> select*from enrollments;
++----------------+-----------+-----------+-----------------+-------+
+| enrolliment_id | studentid | course_id | enrollment_date | grade |
++----------------+-----------+-----------+-----------------+-------+
+|              1 |         1 |         1 | 2026-07-16      | A     |
+|              2 |         2 |         2 | 2026-07-16      | B     |
+|              3 |         3 |         3 | 2026-07-16      | A     |
++----------------+-----------+-----------+-----------------+-------+
+3 rows in set (0.000 sec)
+
+MariaDB [schoolmangement]> select count(grade)
+    -> from enrollments
+    -> where grade=2;
++--------------+
+| count(grade) |
++--------------+
+|            0 |
++--------------+
+1 row in set, 3 warnings (0.000 sec)
+
+MariaDB [schoolmangement]> select count(grade)
+    -> from enrollments
+    -> where grade=A;
+ERROR 1054 (42S22): Unknown column 'A' in 'where clause'
+MariaDB [schoolmangement]> select count(grade)
+    -> from enrollments
+    -> where grade='A';
++--------------+
+| count(grade) |
++--------------+
+|            2 |
++--------------+
+1 row in set (0.000 sec)
+
+MariaDB [schoolmangement]> select sum(credit)
+    -> from course;
++-------------+
+| sum(credit) |
++-------------+
+|     7365.00 |
++-------------+
+1 row in set (0.000 sec)
+
+MariaDB [schoolmangement]> select avg(credit)
+    -> from course;
++-------------+
+| avg(credit) |
++-------------+
+| 2455.000000 |
++-------------+
+1 row in set (0.001 sec)
+
+MariaDB [schoolmangement]> desc tables;
+ERROR 1146 (42S02): Table 'schoolmangement.tables' doesn't exist
+MariaDB [schoolmangement]> desc table;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'table' at line 1
+MariaDB [schoolmangement]> desc table;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'table' at line 1
+MariaDB [schoolmangement]> desc databases;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'databases' at line 1
+MariaDB [schoolmangement]> desc database;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'database' at line 1
+MariaDB [schoolmangement]> show database;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'database' at line 1
+MariaDB [schoolmangement]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| schoolmangement    |
+| test               |
++--------------------+
+6 rows in set (0.001 sec)
+
+MariaDB [schoolmangement]> show tables;
++---------------------------+
+| Tables_in_schoolmangement |
++---------------------------+
+| course                    |
+| enrollments               |
+| student                   |
+| teacher                   |
++---------------------------+
+4 rows in set (0.001 sec)
+
+MariaDB [schoolmangement]> desc student;
++--------------+--------------+------+-----+---------+----------------+
+| Field        | Type         | Null | Key | Default | Extra          |
++--------------+--------------+------+-----+---------+----------------+
+| studentid    | int(11)      | NO   | PRI | NULL    | auto_increment |
+| first_name   | varchar(20)  | NO   |     | NULL    |                |
+| last_name    | varchar(25)  | NO   |     | NULL    |                |
+| birth_date   | date         | NO   |     | NULL    |                |
+| email        | varchar(150) | NO   |     | NULL    |                |
+| phone_number | varchar(80)  | YES  |     | NULL    |                |
++--------------+--------------+------+-----+---------+----------------+
+6 rows in set (0.007 sec)
+
+MariaDB [schoolmangement]> desc teacher;
++--------------+--------------+------+-----+---------+----------------+
+| Field        | Type         | Null | Key | Default | Extra          |
++--------------+--------------+------+-----+---------+----------------+
+| teacher_id   | int(11)      | NO   | PRI | NULL    | auto_increment |
+| first_name   | varchar(23)  | NO   |     | NULL    |                |
+| last_name    | varchar(20)  | NO   |     | NULL    |                |
+| birth_date   | date         | NO   |     | NULL    |                |
+| email        | varchar(150) | YES  |     | NULL    |                |
+| phone_number | varchar(80)  | YES  |     | NULL    |                |
++--------------+--------------+------+-----+---------+----------------+
+6 rows in set (0.006 sec)
+
+MariaDB [schoolmangement]> desc course;
++-------------+--------------+------+-----+---------+----------------+
+| Field       | Type         | Null | Key | Default | Extra          |
++-------------+--------------+------+-----+---------+----------------+
+| course_id   | int(11)      | NO   | PRI | NULL    | auto_increment |
+| course_name | varchar(120) | NO   |     | NULL    |                |
+| teacher_id  | int(11)      | YES  | MUL | NULL    |                |
+| credit      | decimal(8,2) | YES  |     | NULL    |                |
++-------------+--------------+------+-----+---------+----------------+
+4 rows in set (0.006 sec)
+
+MariaDB [schoolmangement]> desc enrollments;
++-----------------+---------+------+-----+-----------+----------------+
+| Field           | Type    | Null | Key | Default   | Extra          |
++-----------------+---------+------+-----+-----------+----------------+
+| enrolliment_id  | int(11) | NO   | PRI | NULL      | auto_increment |
+| studentid       | int(11) | YES  | MUL | NULL      |                |
+| course_id       | int(11) | YES  | MUL | NULL      |                |
+| enrollment_date | date    | NO   |     | curdate() |                |
+| grade           | char(3) | YES  |     | NULL      |                |
++-----------------+---------+------+-----+-----------+----------------+
+5 rows in set (0.006 sec)
+
+MariaDB [schoolmangement]> select course.course_id, teacher.last_name, teacher.first_name
+    -> from course
+    -> right join teacher
+    -> on course=teacher_id, teacher=teacher_id
+    -> order bu course;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'bu course' at line 5
+MariaDB [schoolmangement]> select course.course_id, teacher.last_name, teacher.first_name
+    -> from course
+    -> right join teacher
+    -> on course=teacher_id, teacher=teacher_id
+    -> order by course;
+ERROR 1054 (42S22): Unknown column 'course' in 'on clause'
+MariaDB [schoolmangement]> select course.course_id, teacher.last_name, teacher.first_name
+    -> from course
+    -> right join teacher
+    -> on course.teacher_id= teacher.teacher_id
+    -> order by course;
+ERROR 1054 (42S22): Unknown column 'course' in 'order clause'
+MariaDB [schoolmangement]> select c.course_id, t.last_name, t.first_name
+    -> from course c
+    -> right join teacher t
+    -> on c.teacher_id= t.teacher_id
+    -> order by c.course_id;
++-----------+-----------+------------+
+| course_id | last_name | first_name |
++-----------+-----------+------------+
+|         1 | Khatri    | Dipika     |
+|         2 | bedi.     | Unisha     |
+|         3 | K.C       | Shilpa     |
++-----------+-----------+------------+
+3 rows in set (0.002 sec)
+
+MariaDB [schoolmangement]> select e.grade, s.last_name ,s.first_name
+    -> from enrollments e
+    -> left join student s
+    -> on e.grade=s.grade
+    -> order by e.graade;
+ERROR 1054 (42S22): Unknown column 's.grade' in 'on clause'
+MariaDB [schoolmangement]> select e.grade, s.last_name ,s.first_name
+    -> from enrollments e
+    -> left join student s
+    -> on e.studentid=s.studentid
+    -> order by e.graade;
+ERROR 1054 (42S22): Unknown column 'e.graade' in 'order clause'
+MariaDB [schoolmangement]> select e.grade, s.last_name ,s.first_name
+    -> from enrollments e
+    -> left join student s
+    -> on e.studentid=s.studentid
+    -> order by e.grade;
++-------+------------+------------+
+| grade | last_name  | first_name |
++-------+------------+------------+
+| A     | Karki.     | Shreya     |
+| A     | Dahal      | riya       |
+| B     | Magar      | Manisha    |
++-------+------------+------------+
+3 rows in set (0.002 sec)
